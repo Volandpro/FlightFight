@@ -10,9 +10,9 @@ public class Shoot : MonoBehaviour {
 	float hotAlpha=1;
 	bool back;
 	bool isHot;
-
 	// Use this for initialization
 	void Start () {
+		int Govno;
 		if(Network.peerType!=NetworkPeerType.Disconnected)
 		{
 			if(!networkView.isMine) this.enabled=false;
