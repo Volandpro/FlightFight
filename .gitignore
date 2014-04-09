@@ -1,0 +1,14 @@
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.csproj
+*.sln
+M
+StandardAssets
+NGUI
+Library
+Temp
+Builds
+*.unityproj
+*.unityDetonator
