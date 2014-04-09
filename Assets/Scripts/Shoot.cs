@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class Shoot : MonoBehaviour {
@@ -10,12 +10,11 @@ public class Shoot : MonoBehaviour {
 	float hotAlpha=1;
 	bool back;
 	bool isHot;
+
+	GameObject overheatBackground;
+	GameObject overheatCannon;
 	// Use this for initialization
 	void Start () {
-		int Govno = 1;
-		Govno = Govno * 2;
-		if(Govno == 2) Govno = 3;
-		Govno = 2;
 		if(Network.peerType!=NetworkPeerType.Disconnected)
 		{
 			if(!networkView.isMine) this.enabled=false;
@@ -24,10 +23,20 @@ public class Shoot : MonoBehaviour {
 		hot.pixelInset=new Rect(Screen.width/2-100,-Screen.height/2,100,100);
 		rect = new Rect (0, 0, 200, 200);
 
+
+		overheatBackground=GameObject.Find("SpriteOverheat");
+		overheatCannon=GameObject.Find("SpriteCannon");
 	}
-	
+
+	void ChangeColor(Color color)
+	{
+		TweenColor.Begin(overheatBackground, 0, color);
+		TweenColor.Begin(overheatCannon, 0, color);
+	}
+
 	// Update is called once per frame
 	void Update () {
+		ChangeColor(new Color(timer/100,1-timer/100,0));
 		hot.color= new Color(timer/100,1-timer/100,0);
 		if(timer>0&&!isHot) timer-=Time.deltaTime*20;
 		if(timer>0&&isHot) timer-=Time.deltaTime*10;
@@ -40,14 +49,15 @@ public class Shoot : MonoBehaviour {
 		if(timer<100)isHot=false;
 		if(isHot)
 		{
+			ChangeColor(new Color(1,0,0,hotAlpha));
 			hot.color=new Color(1,0,0,hotAlpha);
 			if(back)
 			{
-				hotAlpha-=Time.deltaTime*2;
+			hotAlpha-=Time.deltaTime*2;
 			}
 			else
 			{
-				hotAlpha+=Time.deltaTime*2;
+			hotAlpha+=Time.deltaTime*2;
 			}
 			if(hotAlpha>=1) back=true;
 			if(hotAlpha<=0)back=false;

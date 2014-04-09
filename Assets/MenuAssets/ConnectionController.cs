@@ -13,7 +13,7 @@ public class ConnectionController : MonoBehaviour {
 
 	const int mainLevelIndex = 1;
 	//Переменные для мастер сервера и нетворка
-	const int playerLimit = 2;
+	const int playerLimit = 1;
 	const string gameType = "OnlineWarplanesGame";
 	const string comment = "MaxImbaComment";
 	const int listenPort = 25000;
