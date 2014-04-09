@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-// ХУЙ ПИЗДА и ДЖИГУРДА , Я ЕБУ ТЕБЯ В РООООООТ!
+
 public class SpawnBonus : MonoBehaviour {
 	public GameObject[] bonuses;
 	GameObject bonus;

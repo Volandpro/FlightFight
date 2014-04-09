@@ -10,12 +10,7 @@ public class Shoot : MonoBehaviour {
 	float hotAlpha=1;
 	bool back;
 	bool isHot;
-	//Ты ТУПОЙ МУДАК БЛЯ
-	//Ты ТУПОЙ МУДАК БЛЯ
-	//Ты ТУПОЙ МУДАК БЛЯ
-	//Ты ТУПОЙ МУДАК БЛЯ
-	//Ты ТУПОЙ МУДАК БЛЯ
-	//Ты ТУПОЙ МУДАК БЛЯ
+
 	// Use this for initialization
 	void Start () {
 		if(Network.peerType!=NetworkPeerType.Disconnected)
