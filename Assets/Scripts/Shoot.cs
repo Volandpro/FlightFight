@@ -15,6 +15,7 @@ public class Shoot : MonoBehaviour {
 		int Govno = 1;
 		Govno = Govno * 2;
 		if(Govno == 2) Govno = 3;
+		Govno = 2;
 		if(Network.peerType!=NetworkPeerType.Disconnected)
 		{
 			if(!networkView.isMine) this.enabled=false;
