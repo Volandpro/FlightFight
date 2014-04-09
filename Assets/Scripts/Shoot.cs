@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Shoot : MonoBehaviour {
@@ -12,7 +12,8 @@ public class Shoot : MonoBehaviour {
 	bool isHot;
 	// Use this for initialization
 	void Start () {
-		int Govno;
+		int Govno = 1;
+
 		if(Network.peerType!=NetworkPeerType.Disconnected)
 		{
 			if(!networkView.isMine) this.enabled=false;
